@@ -21,7 +21,7 @@ public class tryHeapsort{
 
     public static void buildHeapBottomUp(String[] arr){
         int n = arr.length;
-        if(n== 0) return;
+        if(n== 0){return;}
         for(int i = n/2 - 1; i >= 0 ; i --){
             heapify(arr, n, i);
         }
@@ -43,9 +43,7 @@ public class tryHeapsort{
                 swap(heap, i, parent);
                 i = parent;
             }
-      else{
-                break;
-            }
+            else{ break;}
         }
     }
     private static void heapify(String[] arr,int n, int i){
