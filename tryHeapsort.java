@@ -1,7 +1,7 @@
-
+import java.util.Arrays;
 
 public class tryHeapsort{
-  public staic void main(String[] args){
+  public static void main(String[] args){
     String[] testing = {"gins", "are", "toxic", "you", "should", "never", "ever", "take", "them", "or", "consume", "them", "it", "ruins", "your", "health", "and", "damages", "your", "lungs"};
     long startforBottomUp = System.nanoTime();
     buildHeapBottomUp(testing);
@@ -28,18 +28,18 @@ public class tryHeapsort{
   public static void buildHeapTopDown(String[] arr){
     String[] heap = new String[arr.length];
     int size = 0;
-    for(String words : heap){
+    for(String word : heap){
       insert(heap, size, word);
       size++;
     }
-    System.arraycopy(heap, 0, arr, 0, arr.length)
+    System.arraycopy(heap, 0, arr, 0, arr.length);
   }
   private static void insert(String[] heap, int size, String word){
     heap[size] = word;
     int i = size;
     while (i > 0 ){
       int parent = (i - 1)/2;
-      if(heap[i].compareTo(heap[parent] < 0 ){
+      if(heap[i].compareTo(heap[parent]) < 0 ){
         swap(heap, i, parent);
         i = parent;
       }
