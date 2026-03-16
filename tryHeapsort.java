@@ -1,6 +1,23 @@
 
 
 public class tryHeapsort{
+  public staic void main(String[] args){
+    String[] testing = {"gins", "are", "toxic", "you", "should", "never", "ever", "take", "them", "or", "consume", "them", "it", "ruins", "your", "health", "and", "damages", "your", "lungs"};
+    long startforBottomUp = System.nanoTime();
+    buildHeapBottomUp(testing);
+    heapsort(testing);
+    long endforBottomUp = System.nanoTime();
+    System.out.println("Bottom up sorted: " + Arrays.toString(testing));
+    System.out.println("Bottom up time: " + (endforBottomUp - startforBottomUp) + " ns");
+    
+     String[] testing2 = {"gins", "are", "toxic", "you", "should", "never", "ever", "take", "them", "or", "consume", "them", "it", "ruins", "your", "health", "and", "damages", "your", "lungs"};
+    long startforTopDown = System.nanoTime();
+    buildHeapTopDown(testing2);
+    heapsort(testing2);
+    long endforTopDown = System.nanoTime();
+    System.out.println("Top down sorted: " + Arrays.toString(testing2));
+    System.out.println("Top down time: " + (endforTopDown - startforTopDown) + " ns");
+  }
 
   public static void buildHeapBottomUp(String[] arr){
     int n = arr.length;
@@ -54,6 +71,12 @@ public class tryHeapsort{
       heapify(arr, i, 0);
       
     }
+  }
+   public static void swap(String[] arr, int i, int j){
+    String temp = arr[i];
+    arr[i] = arr[j];
+    arr[j] = temp;
+    
   }
  
 }
